@@ -1,0 +1,217 @@
+/* CSS Document */
+
+
+/************ Classes *************/
+
+
+.h2margin{margin-left:5px; margin-top:5px; color:#999; background-color:transparent;}
+.margin_bot {margin-bottom:10px;}
+.news{margin-bottom:3px;}
+.ltgrey {color:#006699; background-color:transparent;}
+.plan_margin {margin-left:5px; margin-top:5px;}
+.callout{float:left; width:150px; border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; padding:10px; margin-top:8px; margin-right:10px;}
+
+
+
+/************ Main CSS *************/
+
+
+body
+{
+margin-top:0;
+padding-top:0;
+background-image:url(header_bg.jpg);
+background-repeat:repeat-x;
+}
+
+
+#wrapper
+{
+width:780px;
+margin: 0 auto;
+background-color:#FFFFFF;
+}
+
+#header
+{
+width:100%;
+height:119px;
+background-image:url(header_bg.jpg);
+background-repeat:repeat-x;
+}
+
+#title
+{
+width:auto;
+margin-top:10px;
+margin-left:5px;
+float:left;
+font-family: trebuchet ms, helvetica;
+font-size:0.9em;
+color:white;
+}
+
+#title h1
+{
+margin:0;
+}
+
+#left
+{
+width:515px;
+float:left;
+margin-bottom:10px;
+padding-bottom:50px;
+}
+
+#intro
+{
+margin:10px 0 20px 0;
+}
+
+#info
+{
+width:100%;
+margin-top:20px;
+margin-bottom:10px;
+}
+
+#right
+{
+width:200px;
+float:right;
+margin-bottom:10px;
+margin-top:10px;
+}
+
+#specials
+{
+width:200px;
+border-bottom:1px dotted #ccc;
+padding-bottom:10px;
+}
+
+#news
+{
+margin-top:10px;
+width:200px;
+border-bottom:1px dotted #ccc;
+padding-bottom:10px;
+}
+
+
+#footer
+{
+clear:both;
+height:30px;
+background-image:url(footer_bg.jpg);
+background-repeat:repeat-x;
+}
+
+#credit
+{
+font-family: trebuchet ms, helvetica, arial, san-serif;
+font-size:.7em;
+color:#333;
+text-align:right;
+padding-right:5px;
+}
+
+/*********** ul, h2,h4,p,and so on *************/
+
+
+ul
+{
+margin:0;
+padding:0;
+color:#333;
+font-family: trebuchet ms, helvetica;
+font-size:.8em;
+list-style:none;
+}
+
+h2
+{
+font-family:Geneva, Arial, Helvetica, sans-serif;
+font-weight: normal;
+color:white;
+margin:0;
+}
+
+h4
+{
+font-family:Geneva, Arial, Helvetica, sans-serif;
+font-weight:bolder;
+color:white;
+margin:0;
+}
+
+p, td
+{
+font-family:trebuchet ms, Geneva, Arial, Helvetica, sans-serif;
+font-weight: normal;
+color:#333;
+font-size:1.0em;
+line-height:1.5em;
+margin:0;
+}
+
+a:link {
+	color: #006699;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #006699;
+}
+a:hover {
+	text-decoration: none;
+	color: #0099ff;
+}
+a:active {
+	text-decoration: none;
+}
+
+
+/** All of the styles below were courtesy of http://css.maxdesign.com.au/listamatic/ and modified by me **/
+
+#navcontainer {float:right; margin-top:85px; text-align:center;}
+
+ul#navlist
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+white-space: nowrap;
+}
+
+ul#navlist li
+{
+width:90px;
+background-color:#993333;
+float: left;
+font-family: verdana, arial, sans-serif;
+font-size: 10px;
+font-weight: bold;
+margin: 0;
+padding:6px 0px 14px 0px;
+background:transparent url(nav_bg.jpg);
+background-repeat:no-repeat;
+}
+
+#navlist a, #navlist a:link
+{
+margin: 0;
+padding: 6px 0px 14px 0px;
+color: #333;
+text-decoration: none;
+
+}
+
+
+#navlist li a:hover
+{
+color:#0099ff;
+}
+
+
