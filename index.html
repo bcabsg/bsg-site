@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <title>Biological Structures Group</title>
+    <link rel="stylesheet" type="text/css" href="style.css"
+      media="screen">
+  </head>
+<script src="https://pixijs.download/release/pixi.js"></script>
+<script src="fengari_web.js" type="text/javascript" async></script>
+
+  <body>
+    <div id="header"><div id="skydiv" style="position:absolute;opacity:0.3;"></div id="skydiv">
+      <center>
+        <h1 style="position: relative; z-index:1;">Biological Structures Group (BSG) Homepage</h1>
+      </center>
+      <div id="menu" style="position: relative; z-index:1;">
+        <ul id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="organisation.html">Organisation</a></li>
+          <li><a href="archives.html">Archives</a></li>
+          <li><a href="useful.html">Useful links</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="prizes.html">Prizes</a></li>
+        </ul>
+      </div id="menu">
+    </div id="header">
+
+<div id="content">
+        <div id="left">The aim of this page is to provide links to the
+        biological crystallography groups in the UK, the main european
+        facilities, forthcoming meetings and courses, suppliers,
+        employment opportunities and specialised or generally useful
+        software.
+        <p> All constructive suggestions for improvement are very
+          welcome indeed and please let me know what you would like to
+          see in this page!</p>
+        <p> No thrills warning: the format of this page is basic. </p>
+      </div id="left">
+
+<div id="right">
+
+<center> <img src="bsglogo.gif"> </center> <p>
+
+      <div class="box">
+        <h2>Group Activities<br>
+        </h2>
+        Each year the BSG organises sessions at the BCA Spring meeting,
+        organises a 1 day winter meeting and organises a protein
+        crystallography summer school. </div>
+      <div class="box">
+        <h2>Related links</h2>
+        <ul>
+          <li><a href="http://www.crystallography.org.uk">BCA</a></li>
+          <li><a href="http://www.ecanews.org/">ECA</a></li>
+          <li><a href="http://www.amercrystalassn.org/">ACA</a></li>
+          <li><a href="http://www.iucr.org">IUCr</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Contact the BSG</h2>
+        <div style="font-size: 0.8em;">Please e-mail the group secretary
+          if you would like to contact the BSG committee.</div>
+      </div>
+      <div class="box">
+        <div style="font-size: 0.8em;">Based on a template by <i>lazar</i>
+          from <a href="http://www.oswd.org">Open Source Web Design</a></div>
+      </div>
+</div id="right">
+
+
+<div id="left2">
+<a href="https://tinyurl.com/bca2025"><img style="width: 100%; height: auto;" src="bca2025.jpg"></a>
+<p><p>
+The theme of the BCA Spring Meeting this year is <b>Learning from Others</b>,
+which highlights the necessity in the current research environment to interact and
+collaborate to get the best data or to develop a deeper understanding.
+<p>
+The field of Crystallography lends itself to multi-disciplinary research, and the Spring Meeting will celebrate this.
+In addition, we don't only learn from other researchers but from a wide range of stakeholders, no matter if they
+are from academia, industry or the general public.
+<p>
+To showcase the theme, the subject groups have put
+together an exciting programme with inclusive and collaborative sessions as well as a number of workshops.
+<p>
+BSG sessions include: <b>Engineering Biology</b>, <b>In-Situ Crystallography</b>, <b>Determining a Protein Crystal Structure in 2025</b>,
+<b>Integrative Structural Biology</b> and <b>Mechanisms and Disease</b>.
+<p>
+We are looking forward to seeing (and learning from) you in Leeds.
+<p>
+Registration is available <a href="https://tinyurl.com/bca2025">here</a>.
+</div id="left2">
+
+<div id="left3"><center><img src="endoxtal.jpg"><img src="xtalsmall.jpg"><img src="smallpaul2.jpg"><img src="mapsmall.jpg">
+</center> </div id="left3">
+
+</div id="content">
+
+</body>
+<script type="application/lua">
+
+local js=require('js')
+local window=js.global
+local document=window.document
+skydiv=document:getElementById("skydiv")
+headdiv=document:getElementById("header")
+image_width=763
+image_height=764
+
+function main()
+app=js.new(window.PIXI.Application)
+background=js.new(window.Object)
+div_width=headdiv.clientWidth
+div_height=headdiv.clientHeight
+background.width=div_width
+background.height=div_height
+background.backgroundAlpha=0
+background.antialias=true
+scale=div_width/image_width  oldscale=scale
+init_promise=app:init(background)
+init_promise["then"](init_promise, function() skydiv:insertAdjacentElement("afterbegin",app.canvas)  end)  --override lua's own then command
+asset_promise=window.PIXI.Assets:load('oscimage.png')
+asset_promise["then"](asset_promise, function() sprite=window.PIXI.TilingSprite:from('oscimage.png') sprite.alpha=0 app.stage:addChild(sprite) sprite.width=div_width sprite.height=div_height sprite.tileScale:set(scale,scale) sprite.tilePosition.y=-200 zoom() end)  --override lua's own then command
+end
+
+function zoom()
+app.ticker:add( function(_,ticker)
+                if sprite.alpha<1.0 then sprite.alpha=sprite.alpha+ticker.deltaTime*0.01 end
+                if scale/oldscale>1.2 then return end
+                scale=scale+ticker.deltaTime*0.00003
+                sprite.tilePosition.y=sprite.tilePosition.y-0.2
+                sprite.tileScale:set(scale,scale)
+                end
+                )
+end
+
+main()
+
+window:addEventListener("resize", function() app.canvas:remove() main() end)
+
+</script>
+</html>
